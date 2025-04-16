@@ -1,0 +1,32 @@
+# Dependency directories
+node_modules/
+
+# Build output
+dist/
+
+# Coverage directory
+coverage/
+
+# Output directories
+output/
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+data/*.xlsx
