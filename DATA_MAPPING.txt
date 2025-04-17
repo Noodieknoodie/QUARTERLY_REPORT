@@ -1,0 +1,282 @@
+##########
+part 1 : read the data 
+##########
+
+
+There are 5 investment models in total
+1. Growth
+2. Core
+3. Small / Mid
+4. Alternative
+5. Structured Notes
+
+> Growth, Core, Smid:  share the same general design layout and data mapping (but different worksheets) 
+> Alternative: has its own layout and data mapping, TBD
+> Structured Notes: has its own layout and data mapping
+
++++++ GROWTH +++++
+
+//// WS = growth_overview
+# METADATA
+## DATA w/ HEADERS (all are type "General", besides As Of Date which is type "Date") = 
+Metadata	Value
+As Of Date	3/31/2025
+Portfolio	GROWTH
+Classification	GICS Sectors
+Currency	USD
+Benchmark	DM INDEX
+## RANGE w/ HEADERS =
+B6:C11
+# GROWTH COMMENTARY (type "General")
+## DATA = (TEXT, 3 paragraphs, in one cell, omitted for breivity)
+## RANGE = D15
+
+//// WS = growth_positions
+
+# SECTORS
+## SECTORS LABELS DATA w HEADERS (type "General") =
+Sector Name
+Financials
+Healthcare
+Consumer Discretionary
+Real Estate
+Technology
+Utilities
+Industrials
+Staples
+Energy
+Materials
+Communications
+## SECTOR LABELS RANGE w HEADERS =
+B4:B15
+# SECTOR TOTAL DATA w HEADERS (type "Number") =
+New Total (%)
+17.0
+11.5
+11.0
+2.0
+24.0
+3.0
+10.0
+5.5
+3.5
+4.0
+8.5
+## SECTOR TOTAL DATA RANGE w HEADERS 
+F4:F15
+## SECTOR DIFF (change) DATA w HEADERS (type "Number"):
+Diff (%)
+1.0
+-0.5
+0.0
+0.0
+1.0
+-1.0
+0.0
+-0.5
+-1.0
+2.0
+-1.0
+## SECTOR DIFF (change) RANGE w HEADERS 
+G4:G15
+
+# SECURITIES ADDED/REMOVED
+## SECURITIES ADDED DATA (COMMA DELIMITED, ONE CELL. (type "General")) =
+Blackrock, Chubb, Schwab, Bank of America, Eli Lilly, Novo Nordisk, AstraZeneca, Toyota, TJX, Lululemon, ASML, Advanced Micro, Arista Networks, Amphenol, Intuit, Motorola Solutions, Synopsys, Qualcomm, Sea, Live Nation, Pinterest, Sempra, Steel Dynamics, Vulcan Materials, Uber, Eaton, WW Grainger, AMETEK, Vertiv, Cheniere Energy, Post Holdings				
+## SECURITIES ADDED RANGE = 
+C18
+## SECURITIES REMOVED DATA (COMMA DELIMITED, ONE CELL. (type "General")) =
+Interactive Brokers, Square, United Health, Adobe, Salesforce, Amdocs, Disney, First Energy, Airbus, L3 Harris, Haliburton								
+## SECURITIES REMOVED RANGE = 
+C20
+
+//// WS = growth_stats 
+
+# TOP TEN HOLDINGS (GROWTH) 
+## TOP TEN HOLDINGS (GROWTH) DATA w HEADERS
+(type = Number, General, Number)
+Rank	Name	Weight (%)
+1.0	MICROSOFT CORP	3.0
+2.0	NVIDIA CORP	2.8
+3.0	VISA INC-CLASS A SHARES	2.1
+4.0	SHERWIN-WILLIAMS CO/THE	2.1
+5.0	BERKSHIRE HATHAWAY INC-CL B	2.1
+6.0	AMERICAN EXPRESS CO	2.1
+7.0	VICI PROPERTIES INC	2.1
+8.0	CISCO SYSTEMS INC	2.1
+9.0	BAKER HUGHES CO	2.1
+10.0	NEXTERA ENERGY INC	2.0
+## TOP TEN HOLDINGS (GROWTH) RANGE w HEADERS
+B6:D16 (three columns)
+
+# REGIONAL ALLOCATION (GROWTH)
+## REGIONAL ALLOCATION (GROWTH) DATA 
+(type = General, Number, Number)
+Region	Holdings	Weight (%)
+North America	61.0	90.0
+Western Europe	5.0	6.1
+Asia Pacific	2.0	2.5
+South & Central America	1.0	1.4
+Africa / Middle East	0.0	0.0
+## REGIONAL ALLOCATION (GROWTH) RANGE =
+B19:B24
+
+# METRICS (GROWTH)
+## METRICS (GROWTH) DATA
+(type = General, Number, Number, Number)
+Metric	Portfolio	Benchmark	Difference
+Div Yld	1.8	2.3	-0.5
+P/E	22.5	20.1	2.5
+P/CF	15.6	14.8	0.8
+P/B	4.3	3.1	1.2
+Debt/Equity	117.4	140.2	-22.8
+Current Ratio	1.4	1.2	0.2
+BEst Div Yld	1.5	2.2	-0.7
+ROE	20.7	14.9	5.8
+Market Value(%)	100.0	100.0	0.0
+
+## METRICS (GROWTH) RANGE =
+B28:E37
+
+---
++++++ CORE +++++
+//// WS = core_overview
+DITTO in terms of cell/range mapping
+//// WS = core_positions
+DITTO in terms of cell/range mapping
+//// WS = core_stats 
+DITTO in terms of cell/range mapping
+
+---
+
++++++ SMID +++++
+//// WS = smid_overview
+DITTO in terms of cell/range mapping
+//// WS = smid_positions
+DITTO in terms of cell/range mapping
+//// WS = smid_stats 
+DITTO in terms of cell/range mapping
+
+---
+
++++++ Alternatives +++++
+//// WS = alternatives_overview 
+DITTO in terms of cell/range mapping
+
+(more Alternatives Data TBD, for now, just the overview section
+
++++++ STRUCTURED NOTES +++++
+//// WS = structured_notes_overview
+# METADATA
+## STRUCTURED NOTES DATA w/ HEADERS = 
+Metadata	Value
+As Of Date	3/31/2025
+Portfolio	STRUCTURED NOTES
+Classification	
+Currency	USD
+Benchmark	
+## RANGE w/ HEADERS =
+B6:C11
+# STRUCTURED NOTES COMMENTARY
+## DATA = (TEXT, 3 paragraphs, in one cell, omitted for breivity)
+## RANGE = D15
+# STRUCTURED NOTES PURCHASED
+## STRUCTURED NOTES PURCHASED DATA w HEADERS =
+
+## STRUCTURED NOTES PURCHASED RANGE w HEADERS =
+
+
+
+---
+
+##########
+part 2 : read the prompt
+##########
+
+
+OUTPUT FORMATTING:
+Text/Number Formatting:
+Currency:
+> no decimals on currency 
+> currency formatted as $1,000,000
+Percentages:
+> NO DECIMALS IF WHOLE NUMBER (both pos or neg): (example: 22%)
+> ONE decimal if over 1% (or under -1%) and not whole (example: 2.4%)
+> TWO decimals IF between -1% and 1% (example: 0.56% or -0.92%)
+Number:
+> NO DECIMALS IF WHOLE NUMBER (both pos or neg): (example: 82)
+> ONE decimal if over 1 or under -1 and not whole (example: 2.4 or -16.2)
+> TWO decimals IF between -1 and 1 (example: 0.16 or -0.44)
+
+
+NOTE:
+> see the raw data above and assume this is the norm ranges of values... use what you witness to guide layout and design decisions.
+> design based around the data and examples from above, NOT THE OTHER WAY AROUND. Just becasue, in theory, your design and layout desision would be fabulous if data was distributed a certain way, that is not the reality. Your design decisions and style decisions should be based around the reality of whats going to be expected.
+> this is a quarterly report so the numbers values will change each quarter but in general the ratios and stuff will remain similar. we're not going to randomly diversify out models to adopt 30% stake in african region out of the blue, LOL. 
+> data is raw without percentages in the excel worksheets, but should be clean and formatted for readability in the PDF
+> dont use pie chart for 'Regional Allocation' as 90%+ is north america. the percentages are small for other regions (even 0 sometimes) so it doesnt display well as pie chart. if visual is needed, choose a method that can handle this sort of thing.
+> visuals are great for things if they serve a purpose and if the data does it justice. There are many ways to visualize, so if you decide to do it, then choose means that flatter the data holistically. 
+> dont make everything look the same because youre lazy. What i dont want is a ton of the same style chart with classic "business-blue" colored bars with no thought put into them throughout the entire report, just becasue.
+> measure the data before deciding the spot as to where it lives within the report; in terms of minimul and maximum length, number of rows, if word wrapping is suitable and if so how will it effect other eye-balled measurments? 
+> remember = THE END GOAL IS A PDF REPORT FOR PRINTING (not for web view)... LET ME SAY THAT AGAIN: !!!! A PDF FOR PRINTING NOT WEB VIEW. 
+> what does printing PDF require if its not for web view? well, i dont know, but i do know that this DOESNT MEAN IT HAS TO BE UGLY OR MORE BORING THAN ITS WEB-BASED COUNTERPART. 
+> How do we make sure there are literal NO spillovers, wasted white space, overlaps, hidden labels do to small data values, ugly nesting, imperfect page breaks? well, lets talk: the majority of the data as you can see is actually PRETTY DAMN consistant in terms of the amount of rows and the space is will take up. The only sections that really have some potential "dynamicics" to them are the commentary sections, but even that, in general, will be roughly similarly lengthed each quarter
+> i prefer slightly lesser than normal page margins 
+> clean disclaimer footer, one or two lines 
+
+What does that mean...? lets talk...
+if you know:
+1. that the data is generally structured the same each quarter 
+2. have actual verbatim samples of raw data 
+3. you know the formatting that will be applied
+4. you know the size of a peice of paper 8.5 x 11
+5. you are in full control of all sizing such as fonts, margins, padding, thicknesses, other customizations that have a hand in the spacial real estate consumption. you even know the default stuff that occurs throughout!
+well... so what? WELL use this to your advantage YOU DINGUS! you literally don't need to guess... DO THE MATH. I promise, if you think about all variables that play a role in the output layout and spacial real estate consumption, you can calculate the sizing and CSS customizations that need to occur. be specific. I want it to look like every part of this design was nudged to perfection. 
+
+
+---
+
+Style?
+
+I like unique but obvious, if you know what i mean. 
+i like very modern, a feeling of compact but at the same time not crowded or feeling "small"
+I like special and custom features 
+I like the opitome of "premium design"
+I am not afraid of a splash of color. in fact a LOVE having a distinct accent color that emerges from the undertoe from time to time and kind of gives you the chills because it is such a perfect and unexpected compliment or accent to its surroundings. 
+I am a firm believer in "The Devil's in the Details"
+I promise you that you will fail if you do not consider HOLISTIC MEASURMENTS OF EACH AND EVERY CONTRIBUTION TO THE SPACIAL REAL ESTATE. 
+
+
+---
+
+
+# DONT 
+-- ADD YOUR OWN COMMENTARY OR SECTION
+-- ADD NEW DATA OR BULLSHIT
+-- CATER TO CENTER FIELD. 
+-- ADD YOUR OWN CONTENT!!! YOU ARE A DESIGN EXPERT DONT TRY TO BE A FINANCE GUY BRO!
+
+# DO 
+-- REALIZE THAT I AM A DESIGN FANATIC AND I PAY ALOT OF MONEY FOR YOUR SERVICE
+-- REALIZE I AM NOTHING LIKE YOUR TYPICAL USER. I EXPECT GOD-TEIR RESULTS THE FIRST TIME. ONCE YOU DELIVER CODE YOUR SESSION IS OVER. IF ITS NOT PERFECT THEM YOU ARE FIRED.
+-- DO NOT EVER RISK GETTING FIRED. YOU CAN AND SHOULD STALL AND LEARN AND MAP OUT AND CALCULATE THINGS HEAVILY BEFORE WRITING CODE. BECAUSE REMEMBER. ONCE YOU WRITE THE CODE, THE SESSION IS OVER. IF THE PDF WHEN PRINTED DOESN'T MAKE ME BELEIVE YOU ARE PROUD OF IT... THEN YOU WILL NEVER BE HIRED AGAIN. IF THE PDF WHEN PRINTED HAS ANY ISSUES OR LAYOUT FUCKUPS THEN YOU AND YOUR FAMILY WILL GO STARVING. IM NOT FUCKING AROUND AND YOU SHOULD TAKE THIS SERIOUSLY. BUT ALSO... DONT FUCKING OVERENGINEER. BE PERFECT.
+IF YOU NAIL IT YOU WIN A $200 GIFTCARD AND A BOTTLE OF NICE SCOTCH AND OF COURSE WORLDWIDE RECOGNITION.
+ 
+ 
+ 
+ 
+##########
+part 3 : OUTPUT REQUIRMENTS 
+##########
+
+
+FOR THIS TASK:
+
+1. WRITE AN HTML FILE CODE FOR ONLY THE GROWTH MODEL PAGES (2 pages) WITH ALL OF THE DATA HARD CODED. if you want it to look good in print/PDF, you need to handle layout and page breaks.
+-- so basically ignore the excel stuff for now, just use the data and format it per the requirments and hard code it into the shit. 
+-- please have all of the data contained as JSON in a section within the HTML file, and have this json referenced in the code. dont "hard code it" spread around the entire code file. 
+-- EVERYTHING IN ONE FILE.
+-- HTML CSS JS OTEHR LIBRARIES? WHATEVER THE FUCK YOU WANT YOU ARE THE GOD... YOURE THE ONE WHOS PROVING THEMSEVES!
+-- I ALREADY HAVE A PLAYWRITE SCRIPT THAT WILL GENERATE THE PDF AND DO ALL THAT STUFF. YOUR JOB IS TO GENERATE THE SOURCE DOC
+
+
